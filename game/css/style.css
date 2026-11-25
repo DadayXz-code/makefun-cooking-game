@@ -1,0 +1,51 @@
+/* style.css — the page around the Dapur Kilat canvas.
+   One clear job: page chrome only. The game itself is drawn in render.js. */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #241a12;
+  min-height: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.stage {
+  width: min(1280px, 100vw);
+  padding: 12px;
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+  background: #f3e2c7;
+}
+
+.fallback {
+  color: #ffe9c4;
+  text-align: center;
+  font-size: 14px;
+  margin: 10px 0 0;
+}
+
+#game:focus-visible {
+  outline: 3px solid #ffd166;
+  outline-offset: 4px;
+}
+
+@media (max-height: 760px) {
+  .stage { padding: 4px; }
+  .fallback { display: none; }
+}
